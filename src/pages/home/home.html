@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculadora
+      <!--Astorga Navarrete Yaremi-->
+      <!--Estrada Parra Juan Ramón-->
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label id = 'resul'></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-input #num1 [(ngModel)]='numero1' type="number" placeholder="Num 1"></ion-input>
+          <!--ion-label id = 'signo' class='signo'>Signo</ion-label-->
+          <ion-input id = 'signo' class='signo' placeholder="Signo" readonly="readonly"></ion-input>
+          <ion-input #num2 [(ngModel)]='numero2'  type="number" placeholder="Num 2"></ion-input>
+        </ion-item>
+        <ion-item>
+          <div>
+          <button ion-button primary class = 'btn' (click)="onClick($event,num1.value,num2.value,0)">+</button>
+          <button ion-button primary class = 'btn' (click)="onClick($event,num1.value,num2.value,1)">-</button>
+          </div>
+        </ion-item>
+        <ion-item>
+          <button ion-button primary class = 'btn' (click)="onClick($event,num1.value,num2.value,2)">/</button>
+          <button ion-button primary class = 'btn' (click)="onClick($event,num1.value,num2.value,3)">*</button>
+        </ion-item>
+        <ion-item>
+          <button ion-button primary block (click)="onClick($event,num1.value,num2.value,4)">%</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
